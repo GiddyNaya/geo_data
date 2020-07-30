@@ -19,8 +19,10 @@ Cities
 | id (pk) | name | longitude | latitude | region_id (fk) | country_id (fk) |
 |---------|------|-----------|----------|----------------|-----------------|
 
-
-[See Demo Usage](https://giddynaya.github.io/geo_data/)
-
+ <br /> 
+   <br />
+[See Sample Usage](https://giddynaya.github.io/geo_data/)
+<br /> 
+   <br />
 
 ![Sample page image](https://lh3.googleusercontent.com/9JR3XvOS_0M80NJWvVDgU-NYQXuFXBaX2im8lPXXF9enrS8iX4MqqnHgYKVEm4Q4lTyzP3ssVsDjNWjz1tSJ=w1280-h578)
