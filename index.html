@@ -11,6 +11,7 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
   <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css"> -->
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.min.css">
   <style type="text/css">
@@ -96,6 +97,7 @@ html {
     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iNDBweCIgaGVpZ2h0PSI0MHB4IiB2aWV3Qm94PSIxMiAxMiA0MCA0MCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAxMiAxMiA0MCA0MCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cGF0aCBmaWxsPSIjMzMzMzMzIiBkPSJNMzIsMTMuNGMtMTAuNSwwLTE5LDguNS0xOSwxOWMwLDguNCw1LjUsMTUuNSwxMywxOGMxLDAuMiwxLjMtMC40LDEuMy0wLjljMC0wLjUsMC0xLjcsMC0zLjINCgljLTUuMywxLjEtNi40LTIuNi02LjQtMi42QzIwLDQxLjYsMTguOCw0MSwxOC44LDQxYy0xLjctMS4yLDAuMS0xLjEsMC4xLTEuMWMxLjksMC4xLDIuOSwyLDIuOSwyYzEuNywyLjksNC41LDIuMSw1LjUsMS42DQoJYzAuMi0xLjIsMC43LTIuMSwxLjItMi42Yy00LjItMC41LTguNy0yLjEtOC43LTkuNGMwLTIuMSwwLjctMy43LDItNS4xYy0wLjItMC41LTAuOC0yLjQsMC4yLTVjMCwwLDEuNi0wLjUsNS4yLDINCgljMS41LTAuNCwzLjEtMC43LDQuOC0wLjdjMS42LDAsMy4zLDAuMiw0LjcsMC43YzMuNi0yLjQsNS4yLTIsNS4yLTJjMSwyLjYsMC40LDQuNiwwLjIsNWMxLjIsMS4zLDIsMywyLDUuMWMwLDcuMy00LjUsOC45LTguNyw5LjQNCgljMC43LDAuNiwxLjMsMS43LDEuMywzLjVjMCwyLjYsMCw0LjYsMCw1LjJjMCwwLjUsMC40LDEuMSwxLjMsMC45YzcuNS0yLjYsMTMtOS43LDEzLTE4LjFDNTEsMjEuOSw0Mi41LDEzLjQsMzIsMTMuNHoiLz4NCjwvc3ZnPg0K);
     background-size: contain;
 }
+
   </style>
 </head> 
 <body>
@@ -108,14 +110,34 @@ html {
 </div>
 <div class="row justify-content-center"> 
 <div class="col-sm-10">
+<h3>Table Sample</h3>
+<p>Credits to <a target="_blank" href="https://datatables.net">Datatables</a>
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a onclick="return loadCountries()" id="world_bread" class="bread" href="/">Home</a></li>
-    <li class="breadcrumb-item d-none"  id="country_bread_li"><a id="country_bread" onclick="return loadRegions(this)" class="bread" href="#"></a></li>
-    <li class="breadcrumb-item d-none" id="region_bread_li"><a onclick="return loadCities(this)"  id="region_bread" class="bread" href="#"></a></li> 
+    <li class="breadcrumb-item"><a onclick="return loadCountriesToTable()" id="world_bread" class="bread" href="/">Home</a></li>
+    <li class="breadcrumb-item d-none"  id="country_bread_li"><a id="country_bread" onclick="return loadRegionsToTable(this)" class="bread" href="#"></a></li>
+    <li class="breadcrumb-item d-none" id="region_bread_li"><a onclick="return loadCitiesToTable(this)"  id="region_bread" class="bread" href="#"></a></li> 
   </ol>
-</nav>
+</nav> 
 <table id="example" class="table table-striped table-bordered " width="100%"></table>
+</div> 
+<div class="col-sm-10" style="margin-top:20px">
+<h3>Dropdown Sample</h3>
+<p>Credits to <a target="_blank" href="https://select2.org">Select2</a>
+<div class="row dropdown-area">
+<div class="col-md-12" style="margin:5px">
+<label for="selectCountry" style="width: 100%">Countries</label>
+<select id="selectCountry" class="js-data-example-ajax" style="width: 250px"></select>
+</div>
+<div class="col-md-12" style="margin:5px">
+<label for="selectRegion" style="width: 100%">Regions / State</label>
+<select id="selectRegion" class="js-data-example-ajax" style="width: 250px"></select>
+</div>
+<div class="col-md-12" style="margin:5px">
+<label for="selectCity" style="width: 100%">City</label>
+<select id="selectCity" class="js-data-example-ajax" style="width: 250px"></select>
+</div>
+</div>
 </div>
 </div>
 
@@ -127,14 +149,176 @@ html {
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.html5.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 
 <script type="text/javascript">
 	//var table = $('#example').DataTable();
 
 	$(document).ready(function() {  
-			loadCountries(); 
+		// Init select2
+$("#selectCountry").select2()
+$("#selectRegion").select2()
+$("#selectCity").select2()
+
+			loadCountriesToDropDown();
+			loadCountriesToTable(); 
   });
-	function loadCountries(){ 
+
+
+	function loadCountriesToDropDown(){
+
+    	// Fetch record
+	    $.ajax({
+	    dataType: "json",
+	    url: "json/countries.json",
+	    mimeType: "application/json",
+	    success: function(data){ 
+
+			// Remove items with no names
+				data = data.filter(function (el) {
+				  return el.name != null && el.name != "";
+				});
+
+			// Format data for select2
+			// array objects must contain {id, text}
+			var i;
+			for(i = 0; i < data.length; i++){
+			    data[i].text = data[i]['name'];
+			    delete data[i].name;
+			}
+			// Sort records
+			data = data.sort(function(a, b) {
+				            return a.text < b.text ? -1 : a.text > b.text ? 1 : 0;
+				        })
+
+			// add placeholder 
+			data.unshift({id: '', text: 'Select country', code: ''});
+
+
+			// reInit dropdown with data
+       		$("#selectCountry").select2({
+				  data: data,
+				   /* sorter: function(data) {
+				        return data.sort(function(a, b) {
+				            return a.text < b.text ? -1 : a.text > b.text ? 1 : 0;
+				        });
+				    }*/
+				})
+
+		    $('#selectCountry').on('select2:select', function (e) {
+			    var data = e.params.data;
+			    console.log(data);
+			    loadRegionsToDropDown(data.id)
+			});
+		    }
+		});
+		return false; 
+	} 
+
+	function loadRegionsToDropDown(country_id){
+		 //clearRecords 
+		 $('#selectRegion').empty().trigger("change"); 
+		 $('#selectCity').empty().trigger("change"); 
+
+    	// Fetch record
+	    $.ajax({
+	    dataType: "json",
+	    url: "json/regions/country_"+country_id+".json",
+	    mimeType: "application/json",
+	    success: function(data){ 
+
+			// Remove items with no names
+				data = data.filter(function (el) {
+				  return el.name != null && el.name != "";
+				});
+
+			// Format data for select2
+			// array objects must contain {id, text}
+			var i;
+			for(i = 0; i < data.length; i++){
+			    data[i].text = data[i]['name'];
+			    delete data[i].name;
+			}
+
+
+			// Sort records
+			data = data.sort(function(a, b) {
+				            return a.text < b.text ? -1 : a.text > b.text ? 1 : 0;
+				        })
+
+			// add placeholder 
+			data.unshift({id: '', text: 'Select region/state', code: ''});
+
+
+			// reInit dropdown with data
+       		$("#selectRegion").select2({
+				  data: data,
+				    /*sorter: function(data) {
+				        return data.sort(function(a, b) {
+				            return a.text < b.text ? -1 : a.text > b.text ? 1 : 0;
+				        });
+				    }*/
+				})
+
+		    $('#selectRegion').on('select2:select', function (e) {
+			    var data = e.params.data;
+			    console.log(data);
+			    loadCitiesToDropDown(data.id)
+			});
+		    }
+		});
+		return false; 
+	} 
+
+	function loadCitiesToDropDown(region_id){
+		 //clearRecords
+		 $('#selectCity').empty().trigger("change");
+
+    	// Fetch record
+	    $.ajax({
+	    dataType: "json",
+	    url: "json/cities/r"+region_id+".json",
+	    mimeType: "application/json",
+	    success: function(data){ 
+
+			// Remove items with no names
+				/*data = data.filter(function (el) {
+				  return el.name != null && el.name != "";
+				});*/
+
+			// Format data for select2
+			// array objects must contain {id, text}
+			var i;
+			for(i = 0; i < data.length; i++){
+			    data[i].text = data[i]['name'];
+			    delete data[i].name;
+			}
+
+
+			// Sort records
+			data = data.sort(function(a, b) {
+				            return a.text < b.text ? -1 : a.text > b.text ? 1 : 0;
+				        })
+
+			// add placeholder 
+			data.unshift({id: '', text: 'Select city', code: ''});
+
+
+			// reInit dropdown with data
+       		$("#selectCity").select2({
+				  data: data,
+				   /* sorter: function(data) {
+				        return data.sort(function(a, b) {
+				            return a.text < b.text ? -1 : a.text > b.text ? 1 : 0;
+				        });
+				    }*/
+				}) 
+		    }
+		});
+		return false; 
+	} 
+
+	function loadCountriesToTable(){ 
 		// Hide breadcrumbs
     	$('#country_bread').parent().addClass('d-none');
     	$('#region_bread').parent().addClass('d-none');
@@ -167,7 +351,7 @@ html {
 					{ "data": "id", "title": "id" },
 					{ "data": "name", "title": "country" ,
 		        fnCreatedCell: function (nTd, sData, oData, iRow, iCol) {
-		            $(nTd).html("<a onclick='return loadRegions(this)' data-id='"+oData.id+"'>"+oData.name+"</a>");
+		            $(nTd).html("<a onclick='return loadRegionsToTable(this)' data-id='"+oData.id+"'>"+oData.name+"</a>");
 		        } 
 		    },
 					{ "data": "code", "title": "code"  }
@@ -179,7 +363,7 @@ html {
 	}
 
 
-	function loadRegions(el){   
+	function loadRegionsToTable(el){   
 		// Get request parameters from callee
     	var country_id = $(el).attr('data-id');
     	var country_name = $(el).text();
@@ -219,7 +403,7 @@ html {
 		        fnCreatedCell: function (nTd, sData, oData, iRow, iCol) {
 		        	var name = oData.name;
 		        	if(!name) name = "-------";
-		            $(nTd).html("<a onclick='return loadCities(this)' data-id='"+oData.id+"'>"+name+"</a>");
+		            $(nTd).html("<a onclick='return loadCitiesToTable(this)' data-id='"+oData.id+"'>"+name+"</a>");
 		        } 
 		    },
 					{ "data": "code", "title": "code"  }
@@ -234,7 +418,7 @@ html {
 		});
 	}
 
-	function loadCities(el){  
+	function loadCitiesToTable(el){  
 		// Get request parameters from callee
     	var region_id = $(el).attr('data-id');
     	var region_name = $(el).text();
