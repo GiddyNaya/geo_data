@@ -1,11 +1,9 @@
 # Geo Data
 Open Source Geographical Data with mapped names of Countries, Regions/States, Cities, Geolocation with longitude and latitude of each Regions-States. Available in various formats (MySQL, MsSQL, Json, Xml, Csv)
 
-* 193 countries
+* 195 countries
 * 3,888 regions/state
-* 2,790,951 cities
-
-<br/>
+* 2,790,951 cities 
 
 <h4>Available formats</h4>
 
@@ -27,13 +25,11 @@ Cities
 | id (pk) | name | longitude | latitude | region_id (fk) | country_id (fk) |
 |---------|------|-----------|----------|----------------|-----------------|
 
- <br /> 
-   <br />
+ <br />  
    
 [👀 See Sample Usage](https://giddynaya.github.io/geo_data/)
 
-<br /> 
-   <br />
+<br />  
    
 <h1>Data Breakdown</h1>
  <h3>Africa</h3>
@@ -355,16 +351,27 @@ Cities
     Wallis and Futuna (56 records)
     Samoa (405 records)
 
-
- <br /> 
    <br />
    
 [👀 See Sample Usage](https://giddynaya.github.io/geo_data/)
 
- <br /> 
-   <br />
+ <br />  
    
 <h4>TODO</h4>
 
 * Data as CSV
 * Data as XML
+
+<h4>Do you find this helpful?</h4>
+<h5>You can... </h5>
+<h6>Sponsor this project ✈️</h6>
+
+[opencollective.com/geodata](http://opencollective.com/geodata)
+
+<h5>Or</h5>
+<h6>Buy me a coffee 😋</h6>
+
+[patreon.com/GiddyNaya](http://patreon.com/GiddyNaya)
+
+[liberapay.com/giddynaya](http://liberapay.com/giddynaya)
+
