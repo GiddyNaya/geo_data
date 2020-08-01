@@ -5,6 +5,14 @@ Open Source Geographical Data with mapped names of Countries, Regions/States, Ci
 * 3,888 regions/state
 * 2,790,951 cities
 
+<br/>
+
+<h4>Available formats</h4>
+
+* [Data as Json](https://github.com/GiddyNaya/geo_data/tree/master/json_db)
+* [Data as MySql Database](https://github.com/GiddyNaya/geo_data/tree/master/mysql_db)
+* [Data as MsSql Database](https://github.com/GiddyNaya/geo_data/tree/master/mssql_db)
+
 <h4>Table map</h4>
 
 Countries
@@ -22,7 +30,7 @@ Cities
  <br /> 
    <br />
    
-[See Sample Usage](https://giddynaya.github.io/geo_data/)
+[👀 See Sample Usage](https://giddynaya.github.io/geo_data/)
 
 <br /> 
    <br />
@@ -351,4 +359,12 @@ Cities
  <br /> 
    <br />
    
-[See Sample Usage](https://giddynaya.github.io/geo_data/)
+[👀 See Sample Usage](https://giddynaya.github.io/geo_data/)
+
+ <br /> 
+   <br />
+   
+<h4>TODO</h4>
+
+* Data as CSV
+* Data as XML
