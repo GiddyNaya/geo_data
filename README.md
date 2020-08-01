@@ -375,3 +375,24 @@ Cities
 
 [liberapay.com/giddynaya](http://liberapay.com/giddynaya)
 
+
+<h2>Contributing</h2>
+
+If you want to contribute to this project and make it better, your help is very welcome. Contributing is a great way to make sure the data is valid and up to date. All you have to do is submit **a clean pull request**.
+
+
+<h3>How to make a clean pull request</h3>
+
+* Create a personal fork of this project.
+* Clone the fork on your local machine. Your remote repo on Github is called origin.
+* Add the original repository as a remote called upstream.
+* If you created your fork a while ago be sure to pull upstream changes into your local repository.
+* Create a new branch to work on! Branch from "develop" not from "master".
+* Add, implement/fix your feature for invalid/missing records, and also add comments wherever possible.
+* Follow the format style of the project, including indentations.
+* Review your changes both locally and on your remote!
+* Add or change the documentation as needed.
+* Squash your commits into a single commit with git's interactive rebase. Create a new branch if necessary.
+* Push your branch to your fork on Github, the remote origin.
+* From your fork open a pull request in the correct branch. Target this project's "develop" branch not "master"
+* We will pull, review and commit your changes. Thank you.
